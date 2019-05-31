@@ -1,0 +1,40 @@
+xpanel(" ")
+xlabel("Select a button then click run")
+xradiobutton("CTRL","setgw()",1)
+xradiobutton("RETIGABINE","setgW()")
+xradiobutton("gKm=0","setgq()")
+xradiobutton("XE991","setgQ()")
+xbutton("run", "run()")
+xbutton("Quit","quit()")
+xpanel()
+
+proc setgw() {
+	soma.gbar_Km = 3
+	is.gbar_Km = 15
+	axonhillock.gbar_Km = 15
+	forall if(ismembrane("Km")) tha_Km=-30
+}
+
+proc setgW() {
+	soma.gbar_Km = 3
+	is.gbar_Km = 15
+	axonhillock.gbar_Km = 15
+	forall if(ismembrane("Km")) tha_Km=tha_Km-20
+}
+
+proc setgq() {
+	soma.gbar_Km = 0
+	is.gbar_Km = 0
+	axonhillock.gbar_Km = 0
+}
+
+proc setgQ() {
+	soma.gbar_Km = 0
+	is.gbar_Km = 0
+	axonhillock.gbar_Km = 0
+	forall if(!ismembrane("gh")) sh_na3rp=sh_na3rp-5	
+}
+
+
+
+setgw()

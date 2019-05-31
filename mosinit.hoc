@@ -1,0 +1,21 @@
+load_file("nrngui.hoc")
+
+
+
+{xopen("FR3cablepas.hoc")}
+
+
+
+{xopen("FRMot3dendNaHH.hoc")}
+
+
+{xopen("standard_0.hoc")}
+
+{xopen("ModifiedFRMotoneuron.hoc")}
+
+tstop=1300
+
+load_file ("Tools.ses")
+
+
+{xopen("GraphicsKmModulators.hoc")}

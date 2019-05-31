@@ -1,0 +1,47 @@
+// FRMotoneuronAdapted.hoc
+
+access soma
+insert Km  
+insert kv1_gp
+
+access axonhillock
+insert Km 
+insert kv1_gp
+
+access is
+insert Km 
+insert kv1_gp
+
+access soma
+
+soma.diam = soma.diam/2
+soma.L = soma.L/2
+soma.g_pas = 0.00125*1.25
+soma.e_pas = soma.e_pas+12
+soma.gbar_kv1_gp = 0.01
+soma.gbar_Km = 0.03
+
+is.L = is.L/2.5
+is.diam = is.diam/7
+is.g_pas = 0.001*1.25
+is.e_pas = is.e_pas+12
+is.gbar_kv1_gp = 0.01
+is.gbar_Km = 0.03
+
+axonhillock.diam(0:1) = (4.5327/7):(13.32433/7)
+axonhillock.g_pas = 0.001*1.25
+axonhillock.e_pas = axonhillock.e_pas+12
+axonhillock.gbar_kv1_gp = 0.01
+axonhillock.gbar_Km = 0.03
+
+forsec dend{
+L = 4021.333/5
+diam(0:0.2) = (16.827/7):(17.788/7)
+diam(0.2:1) = (17.788/7):0.0
+g_pas = 5e-05*1.25
+e_pas = e_pas+12
+}
+
+forall if(ismembrane("mAHP")) gkcamax_mAHP=gkcamax_mAHP/3
+forall if(ismembrane("na3rp")) sh_na3rp=sh_na3rp-1.75
+forall if(ismembrane("naps")) sh_naps=sh_naps-1.75
